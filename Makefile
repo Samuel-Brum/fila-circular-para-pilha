@@ -9,10 +9,10 @@ CXX := g++
 CXXFLAGS := -Wall -c -Iinclude -pg -g
 
 HEADERS := $(wildcard include/*.h)
-SOURCES := $(wildcard scr/*.cpp)
+SOURCES := $(wildcard src/*.cpp)
 OBJECTS := $(patsubst %.cpp, %.o, $(SOURCES))
 
-PROJECT_NAME := fila
+PROJECT_NAME := filaPilha
 EXE := bin/$(PROJECT_NAME)
 
 $(EXE): $(OBJECTS)
@@ -22,4 +22,4 @@ $(EXE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
-	rm -f bin/$(PROJECT_NAME) scr/*.o
+	rm -f bin/$(PROJECT_NAME) src/*.o
