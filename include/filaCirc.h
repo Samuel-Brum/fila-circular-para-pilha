@@ -20,7 +20,7 @@ class Queue {
     bool isEmpty();
 
     // Adding an element
-    void enQueue(int element);
+    void enQueue(int element, int tipo);
 
     // Removing an element
     int deQueue();

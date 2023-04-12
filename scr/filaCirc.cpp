@@ -31,14 +31,16 @@ bool Queue::isEmpty() {
     return false;
 }
 // Adding an element
-void Queue::enQueue(int element) {
+void Queue::enQueue(int element, int tipo) {
   if (isFull()) {
-    cout << "Queue is full";
+    cout << "Queue is full" << endl;
   } else {
     if (front == -1) front = 0;
     rear = (rear + 1) % SIZE;
     items[rear] = element;
-    cout << "Adicionando: " << element << endl;
+    if (tipo == 0) {
+      cout << "Adicionando: " << element << endl;
+    }
   }
 }
 // Removing an element
