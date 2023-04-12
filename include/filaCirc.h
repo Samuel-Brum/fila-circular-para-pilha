@@ -1,5 +1,3 @@
-// Circular Queue implementation in C++
-
 #ifndef FILA_CIRC
 #define FILA_CIRC
 
@@ -12,8 +10,11 @@ class Queue {
   public:
     Queue();
 
+    // Returns size of Queue
+    int tamanho();
+
     // Check if the queue is full
-    bool isFull() ;
+    bool isFull();
 
     // Check if the queue is empty
     bool isEmpty();
@@ -24,10 +25,14 @@ class Queue {
     // Removing an element
     int deQueue();
 
+    // Shows elements in Queue
     void display();
 
+    // Removes all elements from Queue
+    void clean();
+
   private:
-    int items[SIZE], front, rear;
+    int items[SIZE], front, rear, size;
 };
 
 #endif // FILA_CIRC

@@ -1,3 +1,6 @@
+#ifndef PILHA_H
+#define PILHA_H
+
 #include "filaCirc.h"
 #include <iostream>
 
@@ -23,3 +26,5 @@ class Pilha {
   private:
     Queue Pilha;
 };
+
+#endif // PILHA_H

@@ -21,7 +21,5 @@ $(EXE): $(OBJECTS)
 %.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
-run: $(EXE)
-
 clean:
 	rm -f bin/$(PROJECT_NAME) scr/*.o

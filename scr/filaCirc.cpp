@@ -1,8 +1,16 @@
+// Circular Queue implementation in C++
+// Obtido de https://www.programiz.com/dsa/circular-queue
+
 #include "filaCirc.h"
 
 Queue::Queue() {
   front = -1;
   rear = -1;
+}
+
+int Queue::tamanho() {
+  int tam = rear - front + 1;
+  return (tam);
 }
 
 // Check if the queue is full
@@ -30,8 +38,7 @@ void Queue::enQueue(int element) {
     if (front == -1) front = 0;
     rear = (rear + 1) % SIZE;
     items[rear] = element;
-    cout << endl
-        << "Inserted " << element << endl;
+    cout << "Adicionando: " << element << endl;
   }
 }
 // Removing an element
@@ -52,6 +59,7 @@ int Queue::deQueue() {
       front = (front + 1) % SIZE;
     }
     return (element);
+    cout << "Removendo: " << element << endl;
   }
 }
 
@@ -62,13 +70,18 @@ void Queue::display() {
     cout << endl
         << "Empty Queue" << endl;
   } else {
-    cout << "Front -> " << front;
-    cout << endl
-        << "Items -> ";
+    cout << "Front -> " << front << endl;
+    cout << "Rear -> " << rear << endl;
+    cout << "Items -> ";
     for (i = front; i != rear; i = (i + 1) % SIZE)
-      cout << items[i];
+      cout << items[i] << ", ";
     cout << items[i];
-    cout << endl
-        << "Rear -> " << rear;
+    cout << endl << endl;
+
   }
+}
+
+void Queue::clean() {
+  front = -1;
+  rear = -1;
 }
